@@ -22,3 +22,7 @@ Route::middleware(['guest'])->group(function () {
 
 
 });
+Route::middleware(['auth', 'check.passport'])->group(function () {
+    Route::get('/passport/create', [PassportController::class, 'create'])->name('passport.create');
+    Route::post('/passport', [PassportController::class, 'store'])->name('passport.store');
+});
