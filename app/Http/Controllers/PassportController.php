@@ -37,8 +37,6 @@ class PassportController extends Controller
      */
     public function store(PassportCreateRequest $request)
     {
-       
-    
         Passport::create([
             'passport_number' => $request->passport_number,
             'issue_date' => $request->issue_date,
