@@ -21,6 +21,7 @@ class PassportCreateRequest extends FormRequest
      */
     public function rules(): array
     {
+        
         return [
             'passport_number' => 'required|unique:passports|max:255|min:9',
             'issue_date' => 'required|date',
