@@ -11,8 +11,8 @@ class CheckPassport
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check() && Auth::user()->passport) {
-            return redirect()->route('passport.index')->with('error', 'Siz allaqachon passport yaratgansiz.');
+            return redirect()->route('passport.index')->withErrors('Siz allaqachon passport yaratgansiz.');
         }
-                return $next($request);
+        return $next($request);
     }
 }
