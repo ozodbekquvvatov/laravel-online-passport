@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'auth' => \App\Http\Middleware\AuthMiddleware::class,
             'guest' => \App\Http\Middleware\GuestMiddleware::class,
+            'check.passport' => \App\Http\Middleware\CheckPassport::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
