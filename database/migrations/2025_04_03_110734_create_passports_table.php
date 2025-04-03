@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('passports', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable(); // user_id ustunini qo'shish
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->string('passport_number')->unique();
             $table->date('issue_date');
             $table->date('expiry_date');
